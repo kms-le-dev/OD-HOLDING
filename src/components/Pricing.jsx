@@ -1,48 +1,120 @@
-import { CheckCircle2 } from "lucide-react";
-import { pricingOptions } from "../constants";
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
-const Pricing = () => {
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    prenom: '',
+    email: '',
+    message: ''
+  });
+
+  const [status, setStatus] = useState({
+    success: false,
+    message: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      'service_69u7nih',
+      'template_fbmljnj',
+      {
+        prenom: formData.prenom,
+        email: formData.email,
+        message: formData.message,
+      }
+    )
+    .then(() => {
+      setStatus({
+        success: true,
+        message: 'Message envoyé avec succès !'
+      });
+      setFormData({ prenom: '', email: '', message: '' });
+    })
+    .catch(() => {
+      setStatus({
+        success: false,
+        message: 'Une erreur est survenue. Veuillez réessayer.'
+      });
+    });
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
-    <div className="mt-20">
+    <div className="mt-20 max-w-2xl mx-auto px-4">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide">
-        Nous contacter 
+        Nous contacter
       </h2>
-      <div className="flex flex-wrap">
-        {pricingOptions.map((option, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-2">
-            <div className="p-10 border border-neutral-700 rounded-xl">
-              <p className="text-4xl mb-8">
-                {option.title}
-                {option.title === "Pro" && (
-                  <span className="bg-gradient-to-r from-orange-500 to-red-400 text-transparent bg-clip-text text-xl mb-4 ml-2">
-                    (Most Popular)
-                  </span>
-                )}
-              </p>
-              <p className="mb-8">
-                <span className="text-5xl mt-6 mr-2">{option.price}</span>
-                <span className="text-neutral-400 tracking-tight">/Month</span>
-              </p>
-              <ul>
-                {option.features.map((feature, index) => (
-                  <li key={index} className="mt-8 flex items-center">
-                    <CheckCircle2 />
-                    <span className="ml-2">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#"
-                className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl hover:bg-orange-900 border border-orange-900 rounded-lg transition duration-200"
-              >
-                Subscribe
-              </a>
-            </div>
+      <div className="bg-neutral-900 p-8 rounded-xl">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="prenom" className="block text-sm font-medium mb-2">
+              Nom / Prénom
+            </label>
+            <input
+              type="text"
+              id="prenom"
+              name="prenom"
+              value={formData.prenom}
+              onChange={handleChange}
+              required
+              className="w-full p-3 rounded-lg bg-neutral-800 border border-neutral-700 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition"
+            />
           </div>
-        ))}
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full p-3 rounded-lg bg-neutral-800 border border-neutral-700 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium mb-2">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows="5"
+              className="w-full p-3 rounded-lg bg-neutral-800 border border-neutral-700 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition"
+            ></textarea>
+          </div>
+
+          {status.message && (
+            <div className={`p-4 rounded-lg ${status.success ? 'bg-green-900' : 'bg-red-900'}`}>
+              {status.message}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            className="w-full py-3 px-6 text-center text-white bg-orange-600 hover:bg-orange-700 rounded-lg transition duration-200"
+          >
+            Envoyer
+          </button>
+        </form>
       </div>
     </div>
   );
 };
 
-export default Pricing;
+export default Contact;
