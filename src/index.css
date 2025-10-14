@@ -8,3 +8,30 @@
   font-family: "Poppins", sans-serif;
   color-scheme: dark;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Effet de scroll dynamique et chic */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    /* Ajout d'une animation de scroll plus fluide */
+    transition: scroll 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+}
+
+/* Optionnel : animation d'ombre sur le header lors du scroll */
+.scrolled-header {
+  box-shadow: 0 4px 24px 0 rgba(255, 94, 0, 0.12), 0 1.5px 0 0 #ff5e00;
+  transition: box-shadow 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Ajustements pour mobile : réduire légèrement la durée des animations pour fluidité */
+@media (max-width: 640px) {
+  :root {
+    --aos-duration: 700ms;
+  }
+}
