@@ -106,6 +106,17 @@ const Workflow = () => {
           })}
         </div>
       </div>
+
+      <div className="flex justify-center mt-12" data-aos="fade-up">
+        <a
+          href="https://kanigui-dev.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-700 text-white text-xl font-bold shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-pulse focus:outline-none focus:ring-2 focus:ring-orange-400"
+        >
+          Voir mon Portfolio
+        </a>
+      </div>
     </div>
   );
 };
