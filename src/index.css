@@ -6,7 +6,7 @@
 
 :root {
   font-family: "Poppins", sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -25,7 +25,7 @@ html {
 
 /* Optionnel : animation d'ombre sur le header lors du scroll */
 .scrolled-header {
-  box-shadow: 0 4px 24px 0 rgba(255, 94, 0, 0.12), 0 1.5px 0 0 #ff5e00;
+  box-shadow: 0 4px 24px 0 rgba(59, 130, 246, 0.12), 0 1.5px 0 0 #3b82f6;
   transition: box-shadow 0.3s cubic-bezier(0.77, 0, 0.175, 1);
 }
 

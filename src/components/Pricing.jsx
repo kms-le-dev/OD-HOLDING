@@ -52,7 +52,7 @@ const Contact = () => {
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide">
         Nous contacter
       </h2>
-      <div className="bg-neutral-900 p-8 rounded-xl">
+      <div className="bg-white p-8 rounded-xl">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="prenom" className="block text-sm font-medium mb-2">
@@ -65,7 +65,7 @@ const Contact = () => {
               value={formData.prenom}
               onChange={handleChange}
               required
-              className="w-full p-3 rounded-lg bg-neutral-800 border border-neutral-700 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition"
+              className="w-full p-3 rounded-lg bg-neutral-100 border border-neutral-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition"
             />
           </div>
 
@@ -80,7 +80,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full p-3 rounded-lg bg-neutral-800 border border-neutral-700 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition"
+              className="w-full p-3 rounded-lg bg-neutral-100 border border-neutral-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition"
             />
           </div>
 
@@ -95,19 +95,19 @@ const Contact = () => {
               onChange={handleChange}
               required
               rows="5"
-              className="w-full p-3 rounded-lg bg-neutral-800 border border-neutral-700 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition"
+              className="w-full p-3 rounded-lg bg-neutral-100 border border-neutral-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition"
             ></textarea>
           </div>
 
           {status.message && (
-            <div className={`p-4 rounded-lg ${status.success ? 'bg-green-900' : 'bg-red-900'}`}>
+            <div className={`p-4 rounded-lg ${status.success ? 'bg-blue-900' : 'bg-red-900'}`}>
               {status.message}
             </div>
           )}
 
           <button
             type="submit"
-            className="w-full py-3 px-6 text-center text-white bg-orange-600 hover:bg-orange-700 rounded-lg transition duration-200"
+            className="w-full py-3 px-6 text-center text-black bg-blue-600 hover:bg-blue-700 rounded-lg transition duration-200"
           >
             Envoyer
           </button>

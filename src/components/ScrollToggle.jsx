@@ -49,7 +49,7 @@ const ScrollToggle = () => {
     <button
       onClick={handleClick}
       aria-label={showUp ? "Aller en haut" : "Aller en bas de la page"}
-      className={`scroll-toggle fixed bottom-6 right-6 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-orange-600 text-white shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-300`}
+      className={`scroll-toggle fixed bottom-6 right-6 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-black shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300`}
       title={showUp ? "Remonter en haut" : "Aller en bas de la page"}
     >
       {showUp ? (

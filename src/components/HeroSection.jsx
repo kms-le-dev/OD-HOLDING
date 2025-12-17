@@ -66,7 +66,7 @@ const HeroSection = () => {
     <div className="flex flex-col items-center mt-6 lg:mt-20">
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
         Digitalisez vos projets, propulsez
-        <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text"> votre entreprise vers l’avenir</span>
+        <span className="bg-gradient-to-r from-blue-500 to-red-800 text-transparent bg-clip-text"> votre entreprise vers l’avenir</span>
       </h1>
       <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">
         Chez OD Holding, nous accompagnons les entreprises et les porteurs de projets dans leur transformation digitale.

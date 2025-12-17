@@ -61,7 +61,7 @@ const Workflow = () => {
     <div id="prestations" className="mt-20">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide" data-aos="fade-down">
         Nos{" "}
-        <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+        <span className="text-blue-600">
           prestations.
         </span>
       </h2>
@@ -78,7 +78,7 @@ const Workflow = () => {
             return (
               <div
                 key={idx}
-                className="bg-neutral-900 rounded-lg overflow-hidden shadow-sm flex flex-col group transition-transform duration-300 hover:scale-[1.025] hover:shadow-2xl"
+                className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col group transition-transform duration-300 hover:scale-[1.025] hover:shadow-2xl"
                 data-aos="zoom-in-up"
                 data-aos-delay={idx * 100}
               >
@@ -96,7 +96,7 @@ const Workflow = () => {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block w-full text-center bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded-md transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-green-400"
+                    className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-black py-2 px-3 rounded-md transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   >
                     Contacter via WhatsApp
                   </a>
@@ -108,14 +108,7 @@ const Workflow = () => {
       </div>
 
       <div className="flex justify-center mt-12" data-aos="fade-up">
-        <a
-          href="https://kanigui.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-700 text-white text-xl font-bold shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-pulse focus:outline-none focus:ring-2 focus:ring-orange-400"
-        >
-          Voir mon Portfolio
-        </a>
+        
       </div>
     </div>
   );
