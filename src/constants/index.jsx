@@ -14,6 +14,7 @@ export const navItems = [
   { label: "Fonctionnalité", href: "#fonctionnalite" },
   { label: "Nos Prestations", href: "#prestations" },
   { label: "Nous Contacter", href: "#contact" },
+  { label: "Portfolio", href: "https://kanigui.vercel.app" },
 ];
 
 

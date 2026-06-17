@@ -69,7 +69,7 @@ const Workflow = () => {
       <div className="mt-8 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, idx) => {
-            const phoneNumber = "2250505051570"; // Remplacez par votre numéro (sans +, ni espaces), ex: 33612345678
+            const phoneNumber = "2250757109835"; 
             // `s.img` est le chemin résolu par Vite après import; on construit l'URL complète pour l'ajouter au message
             const imageUrl = (typeof window !== 'undefined' && s.img) ? `${window.location.origin}${s.img}` : s.img;
             const message = encodeURIComponent(`Bonjour, je suis intéressé par votre service: ${s.title}. Voici l'image du service: ${imageUrl}. Pouvez-vous m'en dire plus ?`);
