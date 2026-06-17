@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import merciGauche from '../assets/merci gauche.png';
+import merciDroite from '../assets/merci droite.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -48,12 +50,19 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="mt-20 max-w-2xl mx-auto px-4">
+    <div id="contact" className="mt-20 max-w-2xl mx-auto px-4 relative">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide">
-        Nous contacter
+        Des Questions? Contactez-nous ici.
       </h2>
-      <div className="bg-white p-8 rounded-xl">
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="relative bg-white p-8 rounded-xl overflow-visible">
+        
+        <img
+          src={merciDroite}
+          alt="Merci droite"
+          className="absolute bottom-0 right-0 w-60 h-auto object-contain translate-y-1/2"
+          style={{ bottom: '-1.5rem' }}
+        />
+        <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
           <div>
             <label htmlFor="prenom" className="block text-sm font-medium mb-2">
               Nom / Prénom
