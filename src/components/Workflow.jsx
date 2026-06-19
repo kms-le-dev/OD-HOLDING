@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import ecomImg from "../assets/ecom.jpg";
 import gestionImg from "../assets/gestion.jpg";
 import mobileImg from "../assets/mobile.jpg";
@@ -57,60 +58,80 @@ const services = [
 ];
 
 const Workflow = () => {
+  const navigate = useNavigate();
+
+  const handleViewClick = (serviceTitle) => {
+    if (serviceTitle === "Sites E-commerces") {
+      navigate("/ecommerce");
+    } else if (serviceTitle === "Applications de Gestions") {
+      navigate("/appgestion");
+    } else if (serviceTitle === "Applications mobiles") {
+      navigate("/appmobile");
+    } else if (serviceTitle === "Sites web") {
+      navigate("/siteweb");
+    } else if (serviceTitle === "Sites Vitrines") {
+      navigate("/sitevitrine");
+    } else if (serviceTitle === "Maintenance & Code") {
+    navigate("/maintenance");
+    } else if (serviceTitle === "Création de Portfolio") {
+    navigate("/portfolio");
+    } else if (serviceTitle === "Maintenance de vos site web") {
+    navigate("/maintenanceweb");
+    } else if (serviceTitle === "Création de votre Saas") {
+    navigate("/saas");
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
-    <div id="prestations" className="mt-20">
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide" data-aos="fade-down">
-        Nos{" "}
-        <span className="text-blue-600">
-          prestations.
-        </span>
-      </h2>
+    <>
+      <div id="prestations" className="mt-20">
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide" data-aos="fade-down">
+          Nos{" "}
+          <span className="text-blue-600">
+            prestations.
+          </span>
+        </h2>
 
-      <div className="mt-8 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, idx) => {
-            const phoneNumber = "2250757109835"; 
-            // `s.img` est le chemin résolu par Vite après import; on construit l'URL complète pour l'ajouter au message
-            const imageUrl = (typeof window !== 'undefined' && s.img) ? `${window.location.origin}${s.img}` : s.img;
-            const message = encodeURIComponent(`Bonjour, je suis intéressé par votre service: ${s.title}. Voici l'image du service: ${imageUrl}. Pouvez-vous m'en dire plus ?`);
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        <div className="mt-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, idx) => {
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col group transition-transform duration-300 hover:scale-[1.025] hover:shadow-2xl"
+                  data-aos="zoom-in-up"
+                  data-aos-delay={idx * 100}
+                >
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl"
+                  />
+                  <div className="p-4 flex-1">
+                    <h5 className="mt-1 mb-2 text-xl">{s.title}</h5>
+                    <p className="text-md text-neutral-500">{s.description}</p>
+                  </div>
+                  <div className="p-4 pt-0">
+                    <button
+                      onClick={() => handleViewClick(s.title)}
+                      className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 rounded-md transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    >
+                      Voir Plus
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
-            return (
-              <div
-                key={idx}
-                className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col group transition-transform duration-300 hover:scale-[1.025] hover:shadow-2xl"
-                data-aos="zoom-in-up"
-                data-aos-delay={idx * 100}
-              >
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl"
-                />
-                <div className="p-4 flex-1">
-                  <h5 className="mt-1 mb-2 text-xl">{s.title}</h5>
-                  <p className="text-md text-neutral-500">{s.description}</p>
-                </div>
-                <div className="p-4 pt-0">
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-black py-2 px-3 rounded-md transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  >
-                    Contacter via WhatsApp
-                  </a>
-                </div>
-              </div>
-            );
-          })}
+        <div className="flex justify-center mt-12" data-aos="fade-up">
+          
         </div>
       </div>
-
-      <div className="flex justify-center mt-12" data-aos="fade-up">
-        
-      </div>
-    </div>
+    </>
   );
 };
 

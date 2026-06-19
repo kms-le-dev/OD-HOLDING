@@ -35,3 +35,24 @@ html {
     --aos-duration: 700ms;
   }
 }
+
+/* Animation d'ouverture pour drawer/menu mobile */
+@keyframes drawerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-drawer-in {
+  animation: drawerIn 320ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* Optionnel : léger style pour les boutons du menu mobile (fallback si Tailwind ne gère pas tout) */
+.menu-btn-fallback {
+  background: linear-gradient(180deg, rgba(239,246,255,0.95), rgba(240,249,255,0.85));
+  box-shadow: 0 8px 20px rgba(59,130,246,0.06);
+}
