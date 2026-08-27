@@ -6,12 +6,12 @@ export default function useAOS() {
   useEffect(() => {
     AOS.init({
       duration: 900,
-      once: true,
+      once: false,
       easing: 'ease-out-cubic',
       // Forcer l'activation sur mobile
       disable: false,
-      // mirror: true permet de rejouer l'animation quand on scroll vers le haut
-      mirror: false,
+      // Rejouer les animations lorsque l'utilisateur remonte la page.
+      mirror: true,
     });
     // refresh AOS after initialization to ensure positions are calculated
     AOS.refresh();

@@ -17,6 +17,8 @@ import Maintenance from "./components/Maintenance";
 import Portfolio from "./components/Portfolio";
 import Maintenanceweb from "./components/Maintenanceweb";
 import Saas from "./components/Saas";
+import ProductOffer from "./components/ProductOffer";
+import InstallPrompt from "./components/InstallPrompt";
 
 const HomePage = () => {
   useAOS();
@@ -25,6 +27,7 @@ const HomePage = () => {
       <Navbar />
       <div className="max-w-7xl mx-auto pt-20 px-6">
         <EngineerShowcase />
+        <ProductOffer />
         <HeroSection />
         <FeatureSection />
         <Workflow />
@@ -39,6 +42,7 @@ const HomePage = () => {
 const App = () => {
   return (
     <Router>
+      <InstallPrompt />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/ecommerce" element={<><Navbar /><Ecommerce /><Footer /><ScrollToggle /></>} />

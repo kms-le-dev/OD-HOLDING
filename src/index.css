@@ -56,3 +56,302 @@ html {
   background: linear-gradient(180deg, rgba(239,246,255,0.95), rgba(240,249,255,0.85));
   box-shadow: 0 8px 20px rgba(59,130,246,0.06);
 }
+
+.install-prompt {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: min(28rem, calc(100vw - 2rem));
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 16px 40px rgba(15, 42, 67, 0.2);
+  animation: installPromptIn 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.install-prompt-icon {
+  display: grid;
+  flex: 0 0 2.6rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border-radius: 12px;
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.install-prompt-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.install-prompt-content strong {
+  color: #102a43;
+  font-size: 0.95rem;
+}
+
+.install-prompt-content p {
+  margin: 0.2rem 0 0;
+  color: #526477;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.install-prompt-button {
+  flex: 0 0 auto;
+  padding: 0.65rem 0.85rem;
+  border: 0;
+  border-radius: 9px;
+  background: #0f766e;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.install-prompt-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.install-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  display: grid;
+  width: 1.7rem;
+  height: 1.7rem;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #526477;
+  cursor: pointer;
+}
+
+.install-close:hover,
+.install-close:focus-visible {
+  background: #f1f5f9;
+  color: #102a43;
+}
+
+@keyframes installPromptIn {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .install-prompt {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: calc(100vw - 1.5rem);
+    padding: 0.9rem;
+  }
+
+  .install-prompt-button {
+    align-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .install-prompt {
+    animation: none;
+  }
+}
+
+.offer-section {
+  position: relative;
+  display: block;
+  margin: 0 auto 7rem;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  overflow: hidden;
+  border: 1px solid rgba(14, 116, 144, 0.18);
+  border-radius: 28px;
+  background: radial-gradient(circle at 90% 10%, rgba(251, 146, 60, 0.22), transparent 32%),
+    linear-gradient(120deg, #f0fdfa 0%, #ffffff 52%, #fff7ed 100%);
+  box-shadow: 0 22px 60px rgba(15, 118, 110, 0.12);
+}
+
+.offer-section::before {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  right: -5rem;
+  bottom: -6rem;
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  border-radius: 50%;
+  content: "";
+}
+
+.offer-copy,
+.offer-gallery {
+  position: relative;
+  z-index: 1;
+}
+
+.offer-copy {
+  max-width: 48rem;
+  margin: 0 auto 2.75rem;
+  text-align: center;
+}
+
+.offer-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0f766e;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.offer-copy h2 {
+  max-width: 42rem;
+  margin: 1rem 0 1.1rem;
+  color: #102a43;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.offer-copy p {
+  max-width: 42rem;
+  margin: 0;
+  color: #526477;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.offer-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 2rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  background: #0f766e;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(15, 118, 110, 0.24);
+  transition: transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+
+.offer-button:hover,
+.offer-button:focus-visible {
+  background: #115e59;
+  box-shadow: 0 16px 30px rgba(15, 118, 110, 0.3);
+  transform: translateY(-3px);
+}
+
+.offer-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.2rem, 3vw, 2rem);
+  align-items: center;
+}
+
+.offer-card {
+  overflow: hidden;
+  border: 1px solid rgba(15, 118, 110, 0.13);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 35px rgba(15, 42, 67, 0.11);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.offer-card:hover {
+  box-shadow: 0 24px 42px rgba(15, 42, 67, 0.17);
+  transform: translateY(-7px);
+}
+
+.offer-image {
+  overflow: hidden;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.12);
+  background: #f8fafc;
+}
+
+.offer-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.offer-card-content {
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+.offer-card-content h3 {
+  margin: 0;
+  color: #102a43;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.offer-card-content p {
+  margin: 0.7rem 0 0;
+  color: #526477;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.offer-card .offer-button {
+  margin-top: 1.2rem;
+  font-size: 0.88rem;
+}
+
+.offer-card-left {
+  animation: offerFloatLeft 5s ease-in-out infinite;
+}
+
+.offer-card-right {
+  animation: offerFloatRight 5.5s ease-in-out 300ms infinite;
+}
+
+@keyframes offerFloatLeft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes offerFloatRight {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@media (max-width: 768px) {
+  .offer-section {
+    margin-bottom: 4.5rem;
+    padding: 2rem 1.25rem 2.5rem;
+  }
+
+  .offer-copy h2 {
+    font-size: 2.2rem;
+  }
+
+  .offer-gallery {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 0 0.25rem;
+  }
+
+  .offer-card-left,
+  .offer-card-right {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-card-left,
+  .offer-card-right {
+    animation: none;
+  }
+}
