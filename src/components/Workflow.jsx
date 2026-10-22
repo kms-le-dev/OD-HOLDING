@@ -95,7 +95,7 @@ const Workflow = () => {
         </h2>
 
         <div className="mt-8 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {services.map((s, idx) => {
               return (
                 <div
@@ -107,7 +107,7 @@ const Workflow = () => {
                   <img
                     src={s.img}
                     alt={s.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl"
+                    className="w-full h-48 bg-slate-100 object-contain transition-transform duration-300 sm:group-hover:scale-105 group-hover:shadow-xl sm:object-cover"
                   />
                   <div className="p-4 flex-1">
                     <h5 className="mt-1 mb-2 text-xl">{s.title}</h5>

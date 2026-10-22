@@ -14,19 +14,17 @@ const FeatureSection = () => {
           </span>
         </h2>
       </div>
-      <div className="flex flex-wrap mt-10 lg:mt-20">
+      <div className="mt-10 grid grid-cols-2 gap-3 px-3 sm:mt-12 sm:grid-cols-3 sm:gap-5 lg:mt-20 lg:gap-6">
         {features.map((feature, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3" data-aos="fade-up" data-aos-delay={index * 100}>
-            <div className="flex">
-              <div className="flex mx-6 h-10 w-10 p-2 bg-white text-blue-700 justify-center items-center rounded-full">
+          <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+            <div className="h-full rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-5">
+              <div className="mx-auto mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 p-2 text-blue-700 sm:h-10 sm:w-10">
                 {feature.icon}
               </div>
-              <div>
-                <h5 className="mt-1 mb-6 text-xl">{feature.text}</h5>
-                <p className="text-md p-2 mb-20 text-neutral-500">
-                  {feature.description}
-                </p>
-              </div>
+              <h5 className="mb-2 text-sm font-semibold leading-snug sm:text-base">{feature.text}</h5>
+              <p className="text-xs leading-relaxed text-neutral-500 sm:text-sm">
+                {feature.description}
+              </p>
             </div>
           </div>
         ))}
