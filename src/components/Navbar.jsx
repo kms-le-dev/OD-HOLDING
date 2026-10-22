@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
 
@@ -9,6 +9,7 @@ const Navbar = () => {
   const toggleRef = useRef(null);
   const drawerRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const contactItem = navItems.find((item) => item.href === "#contact");
   const mobileNavItems = navItems.filter((item) => item.href !== "#contact");
   const colorVariants = [
@@ -42,10 +43,21 @@ const Navbar = () => {
     };
   }, [mobileDrawerOpen]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
+  const handleHomeClick = () => {
+    navigate("/");
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setMobileDrawerOpen(false);
+  };
+
   const handleNavClick = (href) => {
     if (href === "#") {
-      // Accueil - retour à la page d'accueil
-      navigate("/");
+      handleHomeClick();
     } else if (href.startsWith("#")) {
       // Sections sur la page d'accueil
       navigate("/");
@@ -66,7 +78,7 @@ const Navbar = () => {
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <button 
-            onClick={() => navigate("/")}
+            onClick={handleHomeClick}
             className="flex items-center flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
           >
             <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />

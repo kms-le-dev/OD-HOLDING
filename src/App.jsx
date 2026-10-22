@@ -19,6 +19,7 @@ import Maintenanceweb from "./components/Maintenanceweb";
 import Saas from "./components/Saas";
 import ProductOffer from "./components/ProductOffer";
 import InstallPrompt from "./components/InstallPrompt";
+import SeoMetadata from "./components/SeoMetadata";
 
 const HomePage = () => {
   useAOS();
@@ -42,6 +43,7 @@ const HomePage = () => {
 const App = () => {
   return (
     <Router>
+      <SeoMetadata />
       <InstallPrompt />
       <Routes>
         <Route path="/" element={<HomePage />} />
