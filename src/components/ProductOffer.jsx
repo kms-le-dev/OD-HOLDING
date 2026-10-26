@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, MessageCircle, Sparkles, X } from "lucide-react";
 import leftImage from "../assets/gestionstock.PNG";
-import rightImage from "../assets/restau.PNG";
+import rightImage from "../assets/restau.png";
 import restaurantMobileImage1 from "../assets/restaumobile1.png";
 import restaurantMobileImage2 from "../assets/restaumobile2.png";
 import stockMobileImage1 from "../assets/stockmobile1.png";
