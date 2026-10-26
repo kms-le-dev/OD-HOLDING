@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, MessageCircle, Sparkles, X } from "lucide-react";
-import leftImage from "../assets/gestionstock.PNG";
-import rightImage from "../assets/restau.png";
-import restaurantMobileImage1 from "../assets/restaumobile1.png";
-import restaurantMobileImage2 from "../assets/restaumobile2.png";
-import stockMobileImage1 from "../assets/stockmobile1.png";
-import stockMobileImage2 from "../assets/stockmobile2.png";
+import leftImage from "../assets/gestionstock.webp";
+import rightImage from "../assets/restau.webp";
+import restaurantMobileImage1 from "../assets/restaumobile1.webp";
+import restaurantMobileImage2 from "../assets/restaumobile2.webp";
+import stockMobileImage1 from "../assets/stockmobile1.webp";
+import stockMobileImage2 from "../assets/stockmobile2.webp";
 
 const offerTitle = "Des Applications en vente";
 const offerDescription =
@@ -107,7 +107,12 @@ const ProductOffer = () => {
                 onClick={() => setPreviewProduct(product)}
                 aria-label={`Agrandir l’image : ${product.alt}`}
               >
-                <img src={product.image} alt={product.alt} />
+                <img
+                  src={product.image}
+                  alt={product.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
               </button>
               <div className="offer-card-content">
                 <h3>{product.title}</h3>

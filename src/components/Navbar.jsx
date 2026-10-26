@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { navItems } from "../constants";
 
 const Navbar = () => {

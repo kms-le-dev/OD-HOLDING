@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import ecomImg from "../assets/ecom.jpg";
-import gestionImg from "../assets/gestion.jpg";
-import mobileImg from "../assets/mobile.jpg";
+import ecomImg from "../assets/ecom.webp";
+import gestionImg from "../assets/gestion.webp";
+import mobileImg from "../assets/mobile.webp";
 import siteImg from "../assets/site.webp";
-import vitrineImg from "../assets/vitrine.jpg";
-import codeImg from "../assets/code.jpg";
-import portfolio from "../assets/portfolio.jpg";
-import maintenance from "../assets/sitewebmaintenance.jpeg";
-import saas from "../assets/saas.jpg";
+import vitrineImg from "../assets/vitrine.webp";
+import codeImg from "../assets/code.webp";
+import portfolio from "../assets/portfolio.webp";
+import maintenance from "../assets/sitewebmaintenance.webp";
+import saas from "../assets/saas.webp";
 
 const services = [
   {
@@ -107,6 +107,8 @@ const Workflow = () => {
                   <img
                     src={s.img}
                     alt={s.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-48 bg-slate-100 object-contain transition-transform duration-300 sm:group-hover:scale-105 group-hover:shadow-xl sm:object-cover"
                   />
                   <div className="p-4 flex-1">

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import merciGauche from '../assets/merci gauche.png';
-import merciDroite from '../assets/merci droite.png';
+import merciDroite from '../assets/merci droite.webp';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -69,6 +68,8 @@ const Contact = () => {
         <img
           src={merciDroite}
           alt="Merci droite"
+          loading="lazy"
+          decoding="async"
           className="absolute bottom-0 right-0 w-60 h-auto object-contain translate-y-1/2"
           style={{ bottom: '-1.5rem' }}
         />

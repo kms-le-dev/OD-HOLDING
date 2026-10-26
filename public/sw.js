@@ -1,5 +1,5 @@
-const CACHE_NAME = "od-holding-v1";
-const APP_SHELL = ["/", "/manifest.webmanifest", "/logo192x192.png", "/logo512x512.png"];
+const CACHE_NAME = "od-holding-v2";
+const APP_SHELL = ["/", "/manifest.webmanifest", "/logo192x192.webp", "/logo512x512.webp"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

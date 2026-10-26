@@ -8,7 +8,7 @@ import {
   Atom,
   Star,
 } from "lucide-react";
-import profilImg from "../assets/profil.png";
+import profilImg from "../assets/profil.webp";
 
 const PHOTO_SRC = profilImg;
 
