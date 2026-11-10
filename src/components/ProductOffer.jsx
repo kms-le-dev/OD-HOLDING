@@ -19,7 +19,7 @@ import restaurantMobileImage2 from "../assets/restaumobile2.webp";
 import stockpoissonnerie from "../assets/poissonnerie.png";
 import stockMobileImage from "../assets/stockmobile.webp";
 import moneglise from "../assets/moneglise.webp";
-import gestionetablissement from "../assets/gestionetablissement.PNG";
+import gestionetablissement from "../assets/gestionetablissement.png";
 
 const offerDescription =
   "Faites passer votre projet au niveau supérieur avec OD Holding.";
